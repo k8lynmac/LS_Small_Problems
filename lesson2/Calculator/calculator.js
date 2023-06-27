@@ -10,7 +10,10 @@ function invalidNumber(number) {
 }
 
 prompt("Enter first number: ");
-let num1 = Number(rlsync.question());
+let num1 = Number(rlsync.question());  
+
+
+
 
 while (invalidNumber(num1)) {
   prompt("Hmm... that doesn't look like a valid number.");
