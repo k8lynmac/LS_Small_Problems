@@ -26,7 +26,15 @@
 // flintstones.push('Dino');
 
 //#10.
-let advice = "Few things in life are as important as house training your pet dinosaur.";
-console.log(advice.slice(0, advice.indexOf('house')));
-// Expected return value:
-// => 'Few things in life are as important as '
+// let advice = "Few things in life are as important as house training your pet dinosaur.";
+// console.log(advice.slice(0, advice.indexOf('house')));
+// // Expected return value:
+// // => 'Few things in life are as important as '
+
+const a = ['hello'];
+
+if (true) {
+  a.push('world');
+}
+
+console.log(a);

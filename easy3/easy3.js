@@ -94,13 +94,129 @@
 // triangle(9);
 
 //#6. Madlibs
-let rlsync = require('readline-sync');
-let noun = rlsync.question('Enter a noun: ');
-let verb = rlsync.question('Enter a verb: ');
-let adjective = rlsync.question('Enter an adj: ');
-let adverb = rlsync.question('Enter an adverb: ');
+// let rlsync = require('readline-sync');
+// let noun = rlsync.question('Enter a noun: ');
+// let verb = rlsync.question('Enter a verb: ');
+// let adjective = rlsync.question('Enter an adj: ');
+// let adverb = rlsync.question('Enter an adverb: ');
 
-console.log(`This is a test for the ${noun}`);
-console.log(`, ${verb}, `);
-console.log(` ${adjective}`);
-console.log(`, and, ${adverb}.`);
+// console.log(`This is a test for the ${noun}`);
+// console.log(`, ${verb}, `);
+// console.log(` ${adjective}`);
+// console.log(`, and, ${adverb}.`);
+
+//#7. Double Doubles
+// function twice(num) {
+//   //checks if length of number is odd
+//   if (num.toString().length % 2 !== 0) {
+//     console.log(num * 2);
+//     return;
+//   }
+//   //checks if number provided is a double number - left-side digits are the same as right-side digits
+//   num = num.toString();
+//   let center = Math.floor(num.length / 2);
+//   let leftNumber = num.substring(0, center);
+//   let rightNumber = num.substring(center);
+
+//   if (leftNumber === rightNumber) {
+//     console.log(num);
+//   }
+//   else {
+//     console.log(Number(num) * 2);
+//   }
+//  }
+
+// twice(37);          // 74
+// twice(44);          // 44
+// twice(334433);      // 668866
+// twice(444);         // 888
+// twice(107);         // 214
+// twice(103103);      // 103103
+// twice(3333);        // 3333
+// twice(7676);        // 7676
+
+//#8. Grade Book
+// function getGrade(score1, score2, score3) {
+//   let average = (score1 + score2 + score3) / 3; 
+//   console.log(`${average}`);
+
+//   if (average < 60) {
+//     console.log('F');
+//   } 
+//   else if (average >= 60  && average < 70) {
+//     console.log('D');
+//   }
+//   else if (average >= 70 && average < 80) {
+//     console.log('C');
+//   }
+//   else if (average >= 80 && average < 90) {
+//     console.log('B');
+//   }
+//   else {
+//     console.log('A');
+//   }
+// }
+
+// getGrade(95, 90, 93);    // "A"
+// getGrade(50, 50, 95);    // "D"
+
+//#9. Clean up the words
+// function cleanUp(stringEx) {
+//   let newString = [];
+//   for (let i = 0; i < stringEx.length; i++) {
+//     if (stringEx.charCodeAt(i) < 65 && stringEx.charCodeAt(i + 1) < 65) {
+//       continue;
+//     }
+//     else if (stringEx.charCodeAt(i) < 65 && stringEx.charCodeAt(i + 1) > 65) {
+//       newString.push(' ');
+//     }
+//     else {
+//       newString.push(stringEx[i]);
+//     }
+//   }
+//   console.log(newString.join(''));
+// }
+
+// cleanUp("---what's my +*& line?");    // " what s my line "
+
+//#10 What Century is that?
+
+function century(year) {
+  let centuryYear;
+  if (year.toString().endsWith('0')) {
+    centuryYear = year / 100;
+  }
+  else {
+    centuryYear = Math.floor(year / 100) + 1;
+  }
+  return String(centuryYear) + centuryEnd(centuryYear);
+} 
+
+function centuryEnd(centuryYear) {
+  if (centuryYear % 100 === 11 || centuryYear % 100 === 12 || centuryYear % 100 === 13) {
+    return 'th';
+  }
+
+  if (String(centuryYear).endsWith('1')) {
+    return 'st';
+  }
+  else if (String(centuryYear).endsWith('2')) {
+    return 'nd';
+  }
+  else if (String(centuryYear).endsWith('3')) {
+    return 'rd';
+  }
+  else {
+    return 'th';
+  }
+}
+
+console.log(century(2000));        // "20th"
+console.log(century(2001));        // "21st"
+console.log(century(1965));        // "20th"
+console.log(century(256));         // "3rd"
+console.log(century(5));           // "1st"
+console.log(century(10103));       // "102nd"
+console.log(century(1052));        // "11th"
+console.log(century(1127));        // "12th"
+console.log(century(11201));       // "113th"
